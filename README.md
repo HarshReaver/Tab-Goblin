@@ -4,10 +4,11 @@ A Chrome extension (Manifest V3) where a goblin eats the tabs you ignored. It pu
 
 ## Install
 
-1. Open `chrome://extensions` in Chrome.
-2. Turn on **Developer mode** (top right).
-3. Click **Load unpacked** and pick this folder (`14-Tab-Goblin`).
-4. Pin the extension from the puzzle-piece menu, then click the Tab Goblin button to open the popup.
+1. Download this repo: on GitHub click **Code > Download ZIP**, then unzip it.
+2. Open `chrome://extensions` in Chrome.
+3. Turn on **Developer mode** (top right).
+4. Click **Load unpacked** and choose the unzipped `Tab-Goblin-main` folder (the one that contains `manifest.json`).
+5. Pin the extension from the puzzle-piece menu, then click the Tab Goblin button to open the popup.
 
 After editing any file, click the reload arrow on the extension card.
 
@@ -42,3 +43,7 @@ Also worth a try: pin a tab, play audio in one, and add a site to the Keep list.
 ## Notes
 
 The extension asks for access to http and https pages only so the form-watching script can run. Nothing is sent anywhere; data stays in Chrome (Keep list and sessions in local extension storage). The toolbar button uses Chrome's default icon, since no image files were added.
+
+## Tested
+
+Installed in Chrome with Load unpacked and checked with about 30 tabs: the list sorts by most ignored, a sleeping tab wakes when clicked, a tab with typed form text is spared by Feed the goblin, and a saved session restores after a Chrome restart.
