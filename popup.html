@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tab Goblin</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div id="goblin"></div>
+    <div>
+      <h1>Tab Goblin</h1>
+      <p id="count"></p>
+      <p id="mood"></p>
+    </div>
+  </header>
+
+  <p id="msg" role="status"></p>
+
+  <nav>
+    <button data-panel="tabs" class="active">Tabs</button>
+    <button data-panel="keep">Keep list</button>
+    <button data-panel="sessions">Sessions</button>
+  </nav>
+
+  <section id="tabs">
+    <form id="feedForm">
+      <label for="amount">Sleep tabs not used for at least</label>
+      <div class="row">
+        <input id="amount" type="number" min="1" value="1">
+        <select id="unit" aria-label="Time unit">
+          <option value="minutes">minutes</option>
+          <option value="hours">hours</option>
+          <option value="days">days</option>
+        </select>
+        <button id="feedBtn" class="primary">Feed the goblin</button>
+      </div>
+    </form>
+    <ul id="tabList"></ul>
+  </section>
+
+  <section id="keep" hidden>
+    <p class="hint">The goblin never puts tabs from these sites to sleep.</p>
+    <form id="keepForm" class="row">
+      <input id="keepHost" placeholder="example.com" required>
+      <button>Add site to Keep list</button>
+    </form>
+    <ul id="keepList"></ul>
+  </section>
+
+  <section id="sessions" hidden>
+    <p class="hint">A session saves the address of every open tab.</p>
+    <form id="saveForm" class="row">
+      <input id="sessionName" placeholder="Session name" required>
+      <button class="primary">Save session</button>
+    </form>
+    <ul id="sessionList"></ul>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>
